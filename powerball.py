@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+"""
+Wanted to simulate the odds of the Powerball Lottery:
+In order to reduce runtime, as it would have had to be at least 100 x 200million+ runs to get some results, 
+I reduced it to 100 x 100,000 runs, and only checked for 5 numbers instead of 6. 
+Code can certainly be better, but is altered specifically to get results for project
+"""
 import time
 import random
 
