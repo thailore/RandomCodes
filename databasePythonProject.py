@@ -1,3 +1,7 @@
+# This script connects to a SQL Database and creates a GUI to display 
+# data from the Database
+
+
 from tkinter import *
 
 import mysql.connector
