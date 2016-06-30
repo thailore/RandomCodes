@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('passgen.html')
 
 @app.route('/get_password', methods=['GET','POST'])
 def get_password():
@@ -30,9 +30,10 @@ def get_password():
     for i in range(int(length)):
         pool = random.choice(libraries)
         new_pass.append(random.choice(pool))
-    
+    print(''.join(new_pass))
     return ''.join(new_pass)
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
