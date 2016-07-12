@@ -1,0 +1,13 @@
+<h1 align="center"> Welcome to Links by BusyMind</h1>
+<h3 align="center"> Select a link to get started, or start your own</h3>
+</hr>
+
+{% if topic_list %}
+	<ul>
+	{% for topic in topic_list %}
+		<li><a href="{% url 'links:topic_view' topic.pk %}">{{ topic.topic_title }} </a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> No topics available</p>
+{% endif %}

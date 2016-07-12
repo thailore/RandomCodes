@@ -1,0 +1,12 @@
+<h1 align = "center"> {{ topic.topic_title }}</h1>
+<ul>
+{% if error_messge %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% csrf_token %}
+
+{% for link in topic.link_set.all %}
+	<a href="{{ link.link_url }}" name="link" id="link{{ forloop.counter }}" value ="{{ link.link_description }}"/>
+	<label for= "link{{ forloop.counter }}">{{ link.link_description }}</label><br/>
+{% endfor %}
+</ul>
+
