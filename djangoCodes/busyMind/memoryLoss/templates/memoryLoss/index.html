@@ -1,0 +1,17 @@
+<h1 align="center"> Welcome to MemoryLoss by BusyMind</h1>
+<h3 align="center"> Select a topic to get started, or start your own</h3>
+</hr>
+<h4>Topics:</h4>
+{% if topic_list %}
+	<ul>
+	{% for topic in topic_list %}
+		<li><a href="{% url 'memoryLoss:topic_view' topic.pk %}">{{ topic.topic_title }} </a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> No topics available</p>
+{% endif %}
+
+<a href="/memoryLoss/add_topic/">Add a new topic</a>
+
+
