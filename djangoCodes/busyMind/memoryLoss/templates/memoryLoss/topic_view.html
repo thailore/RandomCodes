@@ -1,16 +1,25 @@
-<h1 align = "center"> {{ topic.topic_title }}</h1>
-<ul>
-{% if error_messge %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<head>
+	<title>MemoryLoss</title>
+</head>
+<body>
 
-{% csrf_token %}
+	<h1 align = "center"> {{ topic.topic_title }}</h1>
+	<ul>
+	{% if error_messge %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-{% for link in topic.link_set.all %}
-	<a href="{{ link.link_url }}" name="link" id="link{{ forloop.counter }}" value ="{{ link.link_description }}"/>
-	<label for= "link{{ forloop.counter }}">{{ link.link_description }}</label><br/>
-{% endfor %}
-</ul>
+	{% csrf_token %}
 
-<div style="text-align:center">    
-  <a href="/memoryLoss">Back to MemoryLoss Home</a>
- </div>
+	{% for link in topic.link_set.all %}
+		<a href="{{ link.link_url }}" name="link" id="link{{ forloop.counter }}" value ="{{ link.link_description }}"/>
+		<label for= "link{{ forloop.counter }}">{{ link.link_description }}</label><br/>
+	{% endfor %}
+	</ul>
+
+	<a href="/memoryLoss{{ link.topic }}/add_link/">Add a New Link</a>
+
+	<div style="text-align:center">    
+  	<a href="/memoryLoss">Back to MemoryLoss Home</a>
+ 	</div>
+
+</body>
 

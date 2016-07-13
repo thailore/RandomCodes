@@ -12,4 +12,5 @@ urlpatterns = [
         #ex: /polls/5/vote
         url(r'^(?P<topic>[a-zA-Z]+)/view_links/$', views.view_links, name='view_links'),
 	url(r'^add_topic/$', views.add_topic, name='add_topic'),
+	url(r'^add_link/$', views.add_link, name='add_link'),
 ]

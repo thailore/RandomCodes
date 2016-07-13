@@ -1,28 +1,26 @@
 <html>
 	<head>
 		<title>MemoryLoss</title>
-	</head>
+	<head>
+	
 	<body>
-		<h1>Add a Topic</h1>
+		<h1>Add a link</h1>
 		<div style="text-align:left">
         	<a href="/memoryLoss">Cancel</a>
         	</div>
-		<form id="topic_form" method="post" action="/memoryLoss/add_topic/">
-			
+		<form id="link_form" method="post" action="/memoryLoss/add_link/">
 			{% csrf_token %}
 			{% for hidden in form.hidden_fields %}
 				{{ hidden }}
 			{% endfor %}
-
+			
 			{% for field in form.visible_fields %}
-				{{ field_errors }}
+				{{ field.errors }}
 				{{ field.help_text }}
 				{{ field }}
 			{% endfor %}
 
-			<input type="submit" name="submit" value="Create Topic" />
+			<input type="submit" name="submit" value="Create link"/>
 		</form>
 	</body>
-
 </html>
-

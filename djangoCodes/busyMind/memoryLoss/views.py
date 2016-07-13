@@ -10,7 +10,7 @@ class IndexView(generic.ListView):
 	context_object_name = 'topic_list'
 
 	def get_queryset(self):
-		return Topic.objects.all()
+		return Topic.objects.order_by('topic_title')
 	
 class TopicView(generic.DetailView):
 	model = Topic
@@ -49,15 +49,24 @@ def add_topic(request):
 		form = TopicForm()
 
 	return render(request, 'memoryLoss/add_topic.html', {'form': form})
-"""
+
 def add_link(request):
 	
 	if request.method == 'POST':
 		form = LinkForm(request.POST)
 
 		if form.is_valid():
-			page=form.save(commit=False)
+			link = form.save(commit=False)
+			link.save()
+		#redirecturl = reverse('memoryLoss', args=[Link.topic])
+		return HttpResponseRedirect('/memoryLoss/')
 
-		try:
-			top = Topic.objects.get(name=topic_title)
-"""
+	else:
+		form = LinkForm()
+
+	return render(request, 'memoryLoss/add_link.html', {'form': form})
+
+		
+
+
+
