@@ -1,26 +1,28 @@
-<html>
-	<head>
-		<title>MemoryLoss</title>
-	<head>
-	
-	<body>
-		<h1>Add a link</h1>
-		<div style="text-align:left">
-        	<a href="/memoryLoss">Cancel</a>
-        	</div>
-		<form id="link_form" method="post" action="/memoryLoss/add_link/">
-			{% csrf_token %}
-			{% for hidden in form.hidden_fields %}
-				{{ hidden }}
-			{% endfor %}
-			
-			{% for field in form.visible_fields %}
-				{{ field.errors }}
-				{{ field.help_text }}
-				{{ field }}
-			{% endfor %}
+{% extends 'memoryLoss/base.html' %}
 
-			<input type="submit" name="submit" value="Create link"/>
-		</form>
-	</body>
-</html>
+{% block title %}{{ topic_title }}{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+	<h1>Add a link</h1>
+
+	<form id="link_form" method="post" action="/memoryLoss/add_link/">
+		{% csrf_token %}
+		{% for hidden in form.hidden_fields %}
+			{{ hidden }}
+		{% endfor %}
+			
+		{% for field in form.visible_fields %}
+			{{ field.errors }}
+			{{ field.help_text }}
+			{{ field }}
+		{% endfor %}
+
+		<input id="submit_btn" type="submit" name="submit" value="Create link" class="btn btn-success"/>
+		<a class="btn btn-danger" href="/memoryLoss" role="button">Cancel</a>
+	</form>
+</div>
+ {% endblock %}
+
+		
+		

@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from .models import Topic, Link
+from .models import UserProfile
 
 class LinkInLine(admin.TabularInline):
 	model = Link
@@ -13,5 +14,6 @@ class TopicAdmin(admin.ModelAdmin):
 	inlines = [LinkInLine]
 
 admin.site.register(Topic, TopicAdmin)
+admin.site.register(UserProfile)
 
 # Register your models here.

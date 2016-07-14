@@ -1,0 +1,26 @@
+
+
+{% extends 'memoryLoss/base.html' %}
+
+{% block title %}{{ topic_title }}{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    <h1>Login to MemoryLoss by BusyMind</h1>
+    <br />
+
+    <form id="login_form" method="post" action="/memoryLoss/login/">            
+        {% csrf_token %}
+        Username: <input type="text" name="username" value="" size="50" />
+        <br />           
+        Password: <input type="password" name="password" value="" size="50" />
+        <br />
+        <input type="submit" value="submit" class="btn btn-primary"/>
+    </form>
+    
+
+    <div style="text-align:center">    
+    <a href="/memoryLoss">Back to MemoryLoss Home</a>
+    </div>
+</div>
+ {% endblock %}

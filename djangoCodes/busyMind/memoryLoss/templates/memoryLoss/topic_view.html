@@ -1,10 +1,18 @@
-<head>
-	<title>MemoryLoss</title>
-</head>
-<body>
+{% extends 'memoryLoss/base.html' %}
 
-	<h1 align = "center"> {{ topic.topic_title }}</h1>
-	<ul>
+{% block title %}{{ topic_title }}{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+	<h1 align="center">{{ topic.topic_title }}</h1>
+	<hr/>
+		{% if user.is_authenticated %}
+			<div align="left">
+				<a class="btn btn-primary" href="/memoryLoss/add_link/" role="button">Add a New Link</a>
+			</div>
+		{% endif %}
+	<br />
+
 	{% if error_messge %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 	{% csrf_token %}
@@ -13,13 +21,11 @@
 		<a href="{{ link.link_url }}" name="link" id="link{{ forloop.counter }}" value ="{{ link.link_description }}"/>
 		<label for= "link{{ forloop.counter }}">{{ link.link_description }}</label><br/>
 	{% endfor %}
-	</ul>
 
-	<a href="/memoryLoss{{ link.topic }}/add_link/">Add a New Link</a>
 
-	<div style="text-align:center">    
-  	<a href="/memoryLoss">Back to MemoryLoss Home</a>
- 	</div>
+	
 
-</body>
+ </div>
+ {% endblock %}
+
 

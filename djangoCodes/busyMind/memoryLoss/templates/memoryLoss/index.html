@@ -1,21 +1,47 @@
-<head>
-	<title>MemoryLoss</title>
-</head>
-<body>
-	<h1 align="center"> Welcome to MemoryLoss by BusyMind</h1>
+{% extends 'memoryLoss/base.html' %}
+
+{% block title %}{{ topic_title }}{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+	<h2 align="center"> Welcome to MemoryLoss by BusyMind</h2>
 	<h3 align="center"> Select a topic to get started, or start your own</h3>
 	</hr>
-	<h4>Topics:</h4>
-	{% if topic_list %}
-		<ul>
-		{% for topic in topic_list %}
-			<li><a href="{% url 'memoryLoss:topic_view' topic.pk %}">{{ topic.topic_title }} </a></li>
-		{% endfor %}
-		</ul>
-	{% else %}
-		<p> No topics available</p>
-	{% endif %}
 
-	<a href="/memoryLoss/add_topic/">Add a new topic</a>
-</body>
+
+	{% if user.is_authenticated %}
+	{% else %}
+		<h3> Welcome: Register or Login above </h3>
+	{% endif %}
+</div>
+
+	<div class="row-fluid">
+		<div class="span6">
+			<h4>Topics:</h4>
+			{% if topic_list %}
+			<ul>
+				{% for topic in topic_list %}
+					<li><a href="{% url 'memoryLoss:topic_view' topic.pk %}">{{ topic.topic_title }} </a></li>
+				{% endfor %}
+			</ul>
+			{% else %}
+				<p> No topics available</p>
+			{% endif %}
+		</div>
+
+		<div class="span6">
+			<h4>Recently added links</h4>
+			{% if links %}
+			<ul>
+				{% for link in link_list|dictsort:'link.add_date'|slice:'5' %}
+				<li><a href="{{ link.link_url }}">{{ link.link_description }}</a> - {{ link.topic }}
+				{% endfor %}
+			<ul>
+			{% else %}
+			No links right now
+			{% endif %}
+		</div>
+	</div>
+	
+ {% endblock %}
 

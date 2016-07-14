@@ -1,28 +1,25 @@
-<html>
-	<head>
-		<title>MemoryLoss</title>
-	</head>
-	<body>
-		<h1>Add a Topic</h1>
-		<div style="text-align:left">
-        	<a href="/memoryLoss">Cancel</a>
-        	</div>
-		<form id="topic_form" method="post" action="/memoryLoss/add_topic/">
+{% extends 'memoryLoss/base.html' %}
+
+{% block title %}{{ topic_title }}{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+	<h1>Add a Topic</h1>
+	<form id="topic_form" method="post" action="/memoryLoss/add_topic/">
 			
-			{% csrf_token %}
-			{% for hidden in form.hidden_fields %}
-				{{ hidden }}
-			{% endfor %}
+		{% csrf_token %}
+		{% for hidden in form.hidden_fields %}
+			{{ hidden }}
+		{% endfor %}
 
-			{% for field in form.visible_fields %}
-				{{ field_errors }}
-				{{ field.help_text }}
-				{{ field }}
-			{% endfor %}
+		{% for field in form.visible_fields %}
+			{{ field_errors }}
+			{{ field.help_text }}
+			{{ field }}
+		{% endfor %}
 
-			<input type="submit" name="submit" value="Create Topic" />
-		</form>
-	</body>
-
-</html>
-
+		<input type="submit" name="submit" value="Create Topic" class="btn btn-success" />
+		<a class="btn btn-danger" href="/memoryLoss" role="button">Cancel</a>
+	</form>
+</div>
+ {% endblock %}
