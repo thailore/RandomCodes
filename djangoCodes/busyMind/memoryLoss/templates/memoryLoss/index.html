@@ -4,8 +4,7 @@
 
 {% block body_block %}
 <div class="hero-unit">
-	<h2 align="center"> Welcome to MemoryLoss by BusyMind</h2>
-	<h3 align="center"> Select a topic to get started, or start your own</h3>
+	<h1> Welcome to ML by BusyMind</h1>
 	</hr>
 
 
@@ -14,12 +13,12 @@
 		<h3> Welcome: Register or Login above </h3>
 	{% endif %}
 </div>
-
+<h3> Select a topic to get started, or start your own</h3>
 	<div class="row-fluid">
-		<div class="span6">
-			<h4>Topics:</h4>
+		<div class="span5">
+			<h2>Topics:</h2>
 			{% if topic_list %}
-			<ul>
+			<ul class="row_fluid">
 				{% for topic in topic_list %}
 					<li><a href="{% url 'memoryLoss:topic_view' topic.pk %}">{{ topic.topic_title }} </a></li>
 				{% endfor %}
@@ -29,19 +28,19 @@
 			{% endif %}
 		</div>
 
-		<div class="span6">
-			<h4>Recently added links</h4>
-			{% if links %}
+		<div class="span5">
+			<h2>Recently added links</h2>
 			<ul>
-				{% for link in link_list|dictsort:'link.add_date'|slice:'5' %}
+				{% for link in topic.link_set.all|dictsort:'link.add_date'|slice:'5' %}
 				<li><a href="{{ link.link_url }}">{{ link.link_description }}</a> - {{ link.topic }}
 				{% endfor %}
 			<ul>
-			{% else %}
-			No links right now
-			{% endif %}
+
 		</div>
 	</div>
 	
  {% endblock %}
+
+
+
 

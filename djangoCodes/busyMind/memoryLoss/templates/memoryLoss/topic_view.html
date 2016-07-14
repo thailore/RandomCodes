@@ -3,6 +3,7 @@
 {% block title %}{{ topic_title }}{% endblock %}
 
 {% block body_block %}
+<body id="index">
 <div class="hero-unit">
 	<h1 align="center">{{ topic.topic_title }}</h1>
 	<hr/>
@@ -18,14 +19,12 @@
 	{% csrf_token %}
 
 	{% for link in topic.link_set.all %}
-		<a href="{{ link.link_url }}" name="link" id="link{{ forloop.counter }}" value ="{{ link.link_description }}"/>
+		<a class="links_available" href="{{ link.link_url }}" name="link" id="link{{ forloop.counter }}" value ="{{ link.link_description }}"/>
 		<label for= "link{{ forloop.counter }}">{{ link.link_description }}</label><br/>
 	{% endfor %}
 
-
-	
-
  </div>
+
  {% endblock %}
 
 

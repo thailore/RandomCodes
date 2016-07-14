@@ -1,5 +1,3 @@
-
-
 {% extends 'memoryLoss/base.html' %}
 
 {% block title %}{{ topic_title }}{% endblock %}
@@ -9,15 +7,23 @@
     <h1>Login to MemoryLoss by BusyMind</h1>
     <br />
 
-    <form id="login_form" method="post" action="/memoryLoss/login/">            
+    <div class="container">
+    <form class="form-signin span4" id="login_form" method="post" action="/memoryLoss/login/">            
         {% csrf_token %}
-        Username: <input type="text" name="username" value="" size="50" />
+
+        {% if bad_details %}
+        <p><strong>Your username and/or password were incorrect!</strong></p>
+        {% elif disabled_account %}
+        <p><strong>Your ML account is currently disabled</strong></p>
+        {% endif %}
+
+        Username: <input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="50" />
         <br />           
-        Password: <input type="password" name="password" value="" size="50" />
+        Password: <input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="50" />
         <br />
         <input type="submit" value="submit" class="btn btn-primary"/>
     </form>
-    
+    </div>
 
     <div style="text-align:center">    
     <a href="/memoryLoss">Back to MemoryLoss Home</a>
