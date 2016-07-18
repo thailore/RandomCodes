@@ -1,0 +1,93 @@
+.index h1,h2, h3{
+	color:#38CFBD;
+}
+
+.subsidary a{
+    font-size: 12px;
+}
+
+.links_available{
+	color: #a10029;
+
+}
+.links_available:hover{
+	color: #0eefc1;
+}
+
+.jumbotron {
+    background-image:url('http://www.stoneassociatessearch.com/wp-content/uploads/2015/09/The-Power-of-Knowledge.jpg');
+    background-size:cover;
+    background-color: #EEEEEE;
+  
+  }
+
+#topic_jumbotron.jumbotron {
+    background-image:url('http://www.stoneassociatessearch.com/wp-content/uploads/2015/09/The-Power-of-Knowledge.jpg');
+    background-size:cover;
+    background-color: #EEEEEE;
+    height: 437px;
+  
+  }
+
+#new_user.jumbotron {
+    background-image: url('https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-148562.jpg');
+    background-size:cover;
+    background-color: #EEEEEE;
+    background-position: fixed-top;
+  
+  }
+
+#new_user p, ol, li, a{
+    color:#FFFFFF;
+}
+
+.jumbotron h1 {
+    color: #FFFFFF;
+    font-size: 60px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 0;
+}
+.jumbotron h2 {
+    font-size: 25px;
+    color: #FFFFFF;
+   
+}
+.jumbotron h3 {
+    color: #FFFFFF;
+   
+}
+.fill{width:100%;height:350px;background-position:center;background-size:cover;
+}
+
+
+body {
+padding-top: 60px;
+padding-bottom: 40px;
+
+}
+
+.sidebar-nav {
+padding: 9px 0;
+}
+
+@media (max-width: 980px) {
+    /* Enable use of floated navbar text */
+    .navbar-text.pull-right {
+    float: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+}
+
+form {
+		display:inline;
+}
+
+.navbar{
+	border-bottom-color: #FF0000;
+}
+
+
+
+

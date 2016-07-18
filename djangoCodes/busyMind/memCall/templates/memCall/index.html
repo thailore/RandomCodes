@@ -1,0 +1,60 @@
+{% extends 'memCall/base.html' %}
+
+{% block title %}{{ topic_title }}{% endblock %}
+
+{% block body_block %}
+<div id="main_page" class="jumbotron">
+	<h1> Welcome to MemCall by BusyMind</h1>
+	</hr>
+
+
+	{% if user.is_authenticated %}
+	{% else %}
+		<h3> Welcome: Register or Login above </h3>
+	{% endif %}
+</div>
+
+{% if user.is_authenticated %}
+<h3> Select a topic to get started, or start your own</h3>
+	<div class="row-fluid">
+		<div class="span12">
+			<h2 align="center">Topics</h2>
+			{% if topic_list %}
+			<ul class="list-group">
+				{% for topic in topic_list %}
+					<li class="list-group-item"><a href="{% url 'memCall:topic_view' topic.pk %}">{{ topic.topic_title }} </a><span class="pull-right"><a href="{% url 'memCall:delete_topic' topic.pk %}">{% if user.is_superuser %}<span class="glyphicon glyphicon-trash"></span></a><span>{% endif %}</li>
+
+				{% endfor %}
+			</ul>
+			{% else %}
+				<p> No topics available</p>
+			{% endif %}
+		</div>
+
+		<!--<div class="span5">
+			<h2>Recently added links</h2>
+			<ul>
+				{% for link in topic.link_set.all|dictsort:'link.add_date'|slice:'5' %}
+				<li><a href="{{ link.link_url }}">{{ link.link_description }}</a> - {{ link.topic }}
+				{% endfor %}
+			<ul>
+
+		</div>-->
+	</div>
+{% else %}
+<div id="new_user" class ="jumbotron">
+	<p> MemCall by BusyMind is a platform for which users can create an account and save links on various topics</p>
+	<ol>
+		<li>1. Create a Topic (ex. Job Interview Help)</li>
+		<li>2. Create a Link under said Topic with a simple description (ex. https://www.livecareer.com/quintessential/job-interview-tips ; 10 Job Interview Tips)</li>
+		<li>3. Let MemCall save it for you in a simple and easily manuverable environment so that you never forget the Link</li>
+		<li>4. Never deal with Browser Bookmark systems or Having so many tabs open of sites you plan to 'read later' again</li>
+	</ol>
+	<h3 align="right"><a href="/memCall/register/">Sign up now!</a></h3>
+</div>
+{% endif %}
+{% endblock %}
+
+
+
+

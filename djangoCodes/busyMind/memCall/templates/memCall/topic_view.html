@@ -1,0 +1,30 @@
+{% extends 'memCall/base.html' %}
+
+{% block title %}{{ topic_title }}{% endblock %}
+
+{% block body_block %}
+<body id="index">
+<div class="jumbotron">
+	<h1 align="center">{{ topic.topic_title }}</h1>
+	<hr/>
+		{% if user.is_authenticated %}
+			<div align="left">
+				<a class="btn btn-primary" href="/memCall/add_link/" role="button">Add a New Link</a>
+			</div>
+		{% endif %}
+	<br />
+
+	{% if error_messge %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	{% csrf_token %}
+
+	{% for link in topic.link_set.all %}
+		<a class="links_available" href="{{ link.link_url }}" target="_blank" name="link" id="link{{ forloop.counter }}" value ="{{ link.link_description }}"/>
+		<label for= "link{{ forloop.counter }}">{{ link.link_description }}</label><br/>
+	{% endfor %}
+
+ </div>
+
+ {% endblock %}
+
+
