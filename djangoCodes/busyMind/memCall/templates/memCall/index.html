@@ -22,12 +22,12 @@
 			{% if topic_list %}
 			<ul class="list-group">
 				{% for topic in topic_list %}
-					<li class="list-group-item"><a href="{% url 'memCall:topic_view' topic.pk %}">{{ topic.topic_title }} </a><span class="pull-right"><a href="{% url 'memCall:delete_topic' topic.pk %}">{% if user.is_superuser %}<span class="glyphicon glyphicon-trash"></span></a><span>{% endif %}</li>
+					<li class="list-group-item"><a href="{% url 'memCall:topic_view' topic.pk %}">{{ topic.topic_title }} </a><span class="pull-right"><a href="{% url 'memCall:delete_topic' topic.pk %}"><span class="glyphicon glyphicon-trash"></span></a><span></li>
 
 				{% endfor %}
 			</ul>
 			{% else %}
-				<p> No topics available</p>
+				<p> No topics available: Create one!</p>
 			{% endif %}
 		</div>
 

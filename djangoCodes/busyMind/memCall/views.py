@@ -14,9 +14,8 @@ class IndexView(generic.ListView):
 
 
 	def get_queryset(self):
-		#if not self.user.is_authenticated():
-			#return HttpResponseRedirect('/memCall/')
-		return Topic.objects.order_by('topic_title')
+		user = self.request.user
+		return Topic.objects.filter(user=user.id)
 
 	
 class TopicView(generic.DetailView):
@@ -43,7 +42,7 @@ class LinkItselfView(generic.DetailView):
 def add_topic(request):
 	
 	if request.method == 'POST':
-		form = TopicForm(request.POST)
+		form = TopicForm(request.POST, user=request.user)
 		
 		if form.is_valid():
 			form.save(commit=True)
@@ -53,7 +52,7 @@ def add_topic(request):
 		else:
 			print(form.errors)
 	else:
-		form = TopicForm()
+		form = TopicForm(user=request.user)
 
 	return render(request, 'memCall/add_topic.html', {'form': form})
 
