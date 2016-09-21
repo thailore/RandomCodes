@@ -22,8 +22,11 @@ Makes Extra Use of:
 
 
 Running and exercising code:
+
 1. Pull all code, keeping file structure
 2. Install all missing dependencies
 3. In Terminal run command `python rpsls.py`
 4. Go to URL listed in terminal, likely `http://127.0.0.1:5000`
+5. To play type your choice in the input bar and press enter. If choice is not one of the five, nothing will happen. Result will be displayed just below and score updated. Reset scores by clicking button.
 
+NOTE: Will not work without internet connection due to dependency on receiving random number from "http://codechallenge.boohma.com/random" as well as dependency for pictures on other urls.

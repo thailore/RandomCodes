@@ -57,10 +57,6 @@ def RPSLS():
         comp_choice.capitalize(), user_choice.capitalize(), won), score=scores)
 
 
-@app.route('/reset', methods=['GET', 'POST'])
-def reset():
-    wins = []
-    return render_template('index.html')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
