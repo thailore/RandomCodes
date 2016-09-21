@@ -5,17 +5,20 @@ from .models import UserProfile
 from django.contrib.auth.models import User
 
 class TopicForm(forms.ModelForm):
-	topic_title = forms.CharField(max_length=200, help_text="Enter Topic")
-	views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
-	#user = forms.IntegerField(widget=forms.HiddenInput(), initial=9)
 	def __init__(self, *args, **kwargs):
 		user = kwargs.pop('user')	
 		super(TopicForm, self).__init__(*args, **kwargs)
+
+	topic_title = forms.CharField(max_length=200, help_text="Enter Topic")
+	views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
+	
+	
 	
 
 	class Meta:
+
 		model = Topic
-		fields =('topic_title','views','user')
+		fields =('topic_title','views', 'user')
 
 class LinkForm(forms.ModelForm):
 	topic = forms.ModelChoiceField(queryset = Topic.objects.order_by('topic_title'),empty_label="(Choose Topic)")

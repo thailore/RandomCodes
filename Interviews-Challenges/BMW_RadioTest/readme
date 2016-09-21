@@ -1,0 +1,133 @@
+# Description of the task
+
+
+
+Your assignment is to test given radio system. A simulator of this
+
+radio system is provided to simplify development process. A real
+
+system is installed in a car.
+
+You should split your task into two parts:
+
+
+
+1. Write unit test for the supplied simulator.py. If in the process you will
+
+find any bug(s) report them in separate BUGS.txt file.
+
+If you think there are design flaws in that module, explain them in BUGS.txt as well.
+
+
+
+2. Prepare test of the real radio system that comes installed in the car.
+
+For that purpose prepare test scenario for manual testing of that system.
+
+While doing it, keep in mind that this radio is mounted in a real car.
+
+Having that in mind, consider carefully your test cases. In this part please
+
+consider especially the cases/scenarios which could not be automated.
+
+
+
+# Prerequisites for this exercise
+
+ 
+
+* Unit test must be written in Python
+
+* Test code must run on Linux OS (tell us which one you have used)
+
+* Test code must support Python 2.7 (tell us which exactly you have used)
+
+* The manual test scenario should be in text format.
+
+  Name the file manual-scenario.txt
+
+* All files must be delivered in single, zipped archive file
+
+
+
+# Our radio system currently supports the following functionality
+
+ 
+
+- 3 radio station buttons are available (DW1, DW2, DW3)
+
+- volume level can be set between 0 and 10
+
+- 1 favorite station button, so you can set (with long press) or call
+
+  (with short press) the favorite radio station
+
+- mute button press to mute on the radio
+
+- mute button press back to mute off, the sound should be back to its previous level
+
+- power button press to off the radio
+
+- power button press to turn on the radio, radio station is set to "DW1" and volume level as before 'power off'
+
+- DW3 is a special radio station, it reports the traffic status in your area,
+
+  thus when switch the radio station to "DW3", radio device will increase the volume by 3
+
+
+
+# Radio simulator interface description. It should simulate all the above
+
+  functionality of the radio.
+
+
+
+* contains only one class: RadioEmulation
+
+* available methods are:
+
+** set_station - accept one argument, radio station name
+
+** get_station - returns current station name
+
+** favorite_station - argument: station name, set the favorite station
+
+** restore_station - call the favorite station
+
+** set_volume - argument: volume label, set the volume
+
+** get_volume - get current volume label
+
+** mute_on - turn off the sound of the radio
+
+** mute_off - turn the sound back
+
+** power - argument: string (on,off), turn off or on the radio
+
+ 
+
+NOTE:
+
+At some point you might conclude that 3 hours are not enough
+
+to accomplish the whole task. In such a case our advice would be to define
+
+priorities up front and implement only those things you consider them necessary.
+
+If you did so, please explain this in the manual scenario file.
+
+ 
+
+* No matter you finished the task or not within 3 hours, please zip what you have and send via email.
+
+Expected file list:
+
+ - simulator.py -> please do not modify this file.
+
+ - README -> please do not modify this file.
+
+ - test.py
+
+ - BUGS.txt
+
+ - manual-scenario.txt

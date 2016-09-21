@@ -10,11 +10,14 @@ class UserProfile(models.Model):
 		return self.user.username
 
 class Topic(models.Model):
-	topic_title = models.CharField(max_length=200, primary_key = True)
+	topic_title = models.CharField(max_length=200, primary_key=True)
 	views = models.IntegerField(default=0)	
-	user = models.ForeignKey(UserProfile, to_field="user", on_delete=models.CASCADE, default=1)
+	user = models.ForeignKey(UserProfile, to_field="user", on_delete=models.CASCADE)
+
 	def __str__(self):
 		return self.topic_title	
+
+
 
 class Link(models.Model):
 	topic = models.ForeignKey(Topic, on_delete=models.CASCADE) #under which topic it falls

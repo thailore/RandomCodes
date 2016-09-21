@@ -34,7 +34,7 @@
 		<!--<div class="span5">
 			<h2>Recently added links</h2>
 			<ul>
-				{% for link in topic.link_set.all|dictsort:'link.add_date'|slice:'5' %}
+				{% for link in topic.link_set.all|dictsort:"lstrip" %}
 				<li><a href="{{ link.link_url }}">{{ link.link_description }}</a> - {{ link.topic }}
 				{% endfor %}
 			<ul>

@@ -1,0 +1,17 @@
+Manual Scenario Tests:
+
+1) Any pushing of any button needs to be tested
+	- Pushing any of the radio station buttons should switch to said station
+	- Volume button (or dial) should indeed change the volume and only within the range
+	- Mute button should turn off the sound, pushing again should return sound to previous state
+
+2) Favorite button should set favorite station upon long hold (maybe 3 seconds or so) and change station to favorite station upon short press
+
+3) None of the buttons should work or alter the system in any way when the radio is powered off, except for the power button
+
+4) Pushing the mute button (now muted) followed by increasing the volume should increase the volume and reset the mute to be off 
+
+5) Pushing of two buttons at once should not cause a problem. For example pushing volume up and volume down at the same time. 
+
+
+

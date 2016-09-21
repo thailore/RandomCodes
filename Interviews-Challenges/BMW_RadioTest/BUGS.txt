@@ -1,0 +1,28 @@
+BUGS:
+
+1) Power button test failed. Powerbutton doesn't turn off radio in power(). Should be if status=='off' etc etc.
+
+2) Mute_off() sets the current_volume back to 0. Should set it back to volume as before mute. Should be self.set_volume(self.mute_volume)
+
+3) favorite_station not setting favorite to current station. Setting to None instead.
+
+4) restore_station returns self.favorite_station but that variable does not exist. should return self.favorite
+
+5) Pushing the DW3 button always increases the volume by 3, even if station is already at DW3. 
+
+6) In test case for number 5, I had set the volume to 5, then switched to DW3 and the volume went to 8, then 'pushed' DW3 again and volume was set to 11, and no exception was raised. set_station function should add 3 to the volume by calling "set_volume" and passing the value equal to current_volume + 3 
+
+Potential design flaws:
+
+1) Favorite_station - setting favorite_station should set the favorite station to the current station the radio is on, not require an input. To reset the favorite station, there should be a separate functionality
+
+2) Restore_station - instead of returning the favorite station, it should instead set_station(self.favorite)
+
+3) Turning on the radio, the station it was on when turned off should be the station it is on, not setting to DW1. 
+
+4) Should be some logic that says when mute is on, and then volume is increased by the user that the mute button is set to off.
+
+5) When switching to DW3 volume increases by 3, so volume should decrease when leaving the station. Ex. user listening to DW1 at volume 5, switches to DW3 and volume increases to 8. User listens for 2 minutes and then switches back to DW1 so volume should decrease back to 5.
+
+6) Setting to DW3 raises the volume by 3 however if the volume is already > 7, the volume should just max to 10
+

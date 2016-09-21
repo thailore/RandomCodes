@@ -13,6 +13,7 @@ class IndexView(generic.ListView):
 	context_object_name = 'topic_list'
 
 
+
 	def get_queryset(self):
 		user = self.request.user
 		return Topic.objects.filter(user=user.id)
@@ -42,7 +43,7 @@ class LinkItselfView(generic.DetailView):
 def add_topic(request):
 	
 	if request.method == 'POST':
-		form = TopicForm(request.POST, user=request.user)
+		form = TopicForm(request.POST, user=request.user.id)
 		
 		if form.is_valid():
 			form.save(commit=True)
@@ -52,7 +53,7 @@ def add_topic(request):
 		else:
 			print(form.errors)
 	else:
-		form = TopicForm(user=request.user)
+		form = TopicForm(user=request.user.id)
 
 	return render(request, 'memCall/add_topic.html', {'form': form})
 

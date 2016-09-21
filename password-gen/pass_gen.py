@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('passgen.html')
+    return render_template('index.html')
 
 @app.route('/get_password', methods=['GET','POST'])
 def get_password():
