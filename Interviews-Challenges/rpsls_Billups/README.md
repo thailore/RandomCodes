@@ -27,3 +27,4 @@ Running and exercising code:
 3. In Terminal run command `python rpsls.py`
 4. Go to URL listed in terminal, likely `http://127.0.0.1:5000`
 
+NOTE: Will not work without internet connection due to dependency on receiving random number from "http://codechallenge.boohma.com/random" as well as dependency for pictures on other urls.
