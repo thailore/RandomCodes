@@ -22,6 +22,7 @@ Makes Extra Use of:
 
 
 Running and exercising code:
+
 1. Pull all code, keeping file structure
 2. Install all missing dependencies
 3. In Terminal run command `python rpsls.py`
