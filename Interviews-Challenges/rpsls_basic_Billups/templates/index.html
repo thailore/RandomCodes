@@ -1,23 +1,64 @@
-<!doctype html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-  </head>
+{% extends "layout.html" %}
+{% block body %}
 
-  <body>
-    <div class="container">
-    <form action="." method="POST">
-      <span>Select number of characters.</span>
-      <input type="text" name="user_choice"><br>
-      <a class="btn btn-primary" href="/get_password">Generate Password</a>
-    </form>
+<!-- script to get and post user decision and result --> 
+<script type="text/javascript">
+  $(function() {
+    var submit_form = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_RPSLS', {
+        user_choice: $('input[name="user_choice"]').val(),
+      }, function(data) {
+        $('#result').text(data.result);
+        $('#comp_score').text(data.score[0]);
+        $('#user_score').text(data.score[1]);
+        $('#ties').text(data.score[2]);
+        $('input[name=user_choice]').focus().select();
+      });
+      return false;
+    };
+    $('input[type=text]').bind('keydown', function(e) {
+      if (e.keyCode === 13) {
+        submit_form(e);
+      }
+    });
+    $('input[name=user_choice]').focus();
+  });
+</script>
+
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>Rock Paper Scissors Lizard Spock!</h1>
+      <div class="row-fluid">
+
+        <!-- Input line and result display -->
+        <div class="span6">
+          <br><br>
+          <p>Try to beat the Computer!
+          <input type="text" size="25" name="user_choice" placeholder="Enter choice & press enter">
+          <br><br>
+          <h3<span id="result"></span></h3>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="span3">
+          </p>
+          <h2>Last 10 rounds</h2>
+          <p>Computer <span id="comp_score">0</span></p>
+          <p>User <span id="user_score">0</span></p>
+          <p>Ties <span id="ties">0</span></p>
+          <form action="/" method="post">
+            <button type="submit" class="btn btn-danger">Reset Score</button>
+          </form>
+        </div>
+
+        <!-- RPSLS Diagram -->
+        <div id="photo" class="span3">
+        </div>
+
+      </div>
     </div>
-
-    <div id="display" class="lead">
-
-    </div>
-  </body>
-</html>
+  </div>
 
 
+{% endblock %}
