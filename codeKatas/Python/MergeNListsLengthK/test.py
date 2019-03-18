@@ -6,11 +6,8 @@ from main import *
 
 class TestKata(unittest.TestCase):
 
-    def setUp(self):
-	    self.kata = Kata()
-
-    def test_upper(self):   
-        self.assertEqual(self.kata.test(), True)
+    # def test_divide_into_arrays(self):   
+    #     self.assertEqual(len(divide_into_arrays([1,5,3,4,2,6])), 6)
 
 if __name__ == '__main__':
     unittest.main()
