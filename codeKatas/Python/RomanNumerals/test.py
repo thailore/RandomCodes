@@ -28,7 +28,7 @@ class TestKata(unittest.TestCase):
         self.assertEqual(romanNumeralsAdd(["VI", "V"]), "XI")
 
     def test_6_plus_3(self):
-        self.assertEqual(romanNumeralsAdd(["VI", "II"]), "IX")
+        self.assertEqual(romanNumeralsAdd(["VI", "III"]), "IX")
 
 if __name__ == '__main__':
     unittest.main()
