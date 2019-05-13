@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TriangleTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2019-05-10T14:54:43" hostname="digital0717" time="0.036">
+  <properties/>
+  <testcase name="equilateralIfAllSidesAreEqual" classname="TriangleTest" time="0.031"/>
+  <testcase name="sidesViolateTriangleInequalitySoNotIsosceles" classname="TriangleTest" time="0.0"/>
+  <testcase name="isoscelesIfFirstTwoSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="equilateralSidesMayBeFloatingPoint" classname="TriangleTest" time="0.0"/>
+  <testcase name="isoscelesIfFirstAndLastSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="notScaleneIfAllSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="scaleneIfNoSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="equilateralIsAlsoIsosceles" classname="TriangleTest" time="0.001"/>
+  <testcase name="scaleneSidesMayBeFloatingPoint" classname="TriangleTest" time="0.0"/>
+  <testcase name="notEquilateralIfNoSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="notScaleneIfTwoSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="sidesViolateTriangleInequalitySoNotScalene" classname="TriangleTest" time="0.0"/>
+  <testcase name="notIsoscelesIfNoSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="isoscelesIfLastTwoSidesAreEqual" classname="TriangleTest" time="0.0"/>
+  <testcase name="allZeroSidesAreIllegalSoNotEquilateral" classname="TriangleTest" time="0.0"/>
+  <testcase name="isoscelesSidesMayBeFloatingPoint" classname="TriangleTest" time="0.001"/>
+  <testcase name="notEquilateralIfAnySideIsUnequal" classname="TriangleTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
