@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AllergiesTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2019-05-17T17:34:07" hostname="digital0717" time="0.03">
+  <properties/>
+  <testcase name="allergicToEggsAndPeanuts" classname="AllergiesTest" time="0.025"/>
+  <testcase name="allergicToJustEggs" classname="AllergiesTest" time="0.0"/>
+  <testcase name="allergicToJustPeanuts" classname="AllergiesTest" time="0.0"/>
+  <testcase name="allergicToJustStrawberries" classname="AllergiesTest" time="0.0"/>
+  <testcase name="ignoreNonAllergenScoreParts" classname="AllergiesTest" time="0.0"/>
+  <testcase name="noAllergiesMeansNotAllergicToAnything" classname="AllergiesTest" time="0.002"/>
+  <testcase name="allergicToEggsAndOtherThings" classname="AllergiesTest" time="0.001"/>
+  <testcase name="allergicToEggsAndShellfish" classname="AllergiesTest" time="0.0"/>
+  <testcase name="allergicToEggs" classname="AllergiesTest" time="0.0"/>
+  <testcase name="allergicToLotsOfStuff" classname="AllergiesTest" time="0.0"/>
+  <testcase name="noAllergies" classname="AllergiesTest" time="0.0"/>
+  <testcase name="allergicToEverything" classname="AllergiesTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

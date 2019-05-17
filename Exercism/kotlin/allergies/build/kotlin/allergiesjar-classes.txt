@@ -1,0 +1,1 @@
+/Users/tylorborgeson/Workspaces/personal/RandomCodes/Exercism/kotlin/allergies/build/classes/kotlin/main/Allergen.class:/Users/tylorborgeson/Workspaces/personal/RandomCodes/Exercism/kotlin/allergies/build/classes/kotlin/main/Allergies.class
