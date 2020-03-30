@@ -1,0 +1,15 @@
+When traversing a Binary Tree recurisvely you essentially do the same thing every time, just in different order:
+
+the code will look something like:
+
+def traverse(root):
+	answer = []
+	traverseRecursive(root, answer)
+	return answer
+
+def traverseRecursive(root, answer):
+	if (root is None):
+		return []
+
+	// preOrder Traversal
+	answer.append(root.val) 
